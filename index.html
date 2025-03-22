@@ -1,0 +1,52 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Me</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="bordered">
+    <nav class="kitty-nav">
+        <a href="index.html"><img src="https://raw.githubusercontent.com/hung1001/hello-kitty-assets/main/kitty.png" alt="Home"></a>
+        <a href="myUniversity.html"><img src="https://raw.githubusercontent.com/hung1001/hello-kitty-assets/main/kitty.png" alt="University"></a>
+        <a href="resume.html"><img src="https://raw.githubusercontent.com/hung1001/hello-kitty-assets/main/kitty.png" alt="Resume"></a>
+    </nav>
+
+    <img src="https://raw.githubusercontent.com/hung1001/hello-kitty-assets/main/kitty.png" alt="Hello Kitty" class="kitty-icon">
+    <h1 class="animated-title">Welcome to My Page</h1>
+    <p>Hi, I'm Qi Nie! Here are some interesting facts about me.</p>
+    <a class="cute-button" href="myUniversity.html">My University</a> 
+    <a class="cute-button" href="resume.html">Resume</a>
+
+    <div class="message-board">
+        <h2>💌 Leave Me a Message!</h2>
+        <form>
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+            <button type="submit" class="cute-button">Send 💖</button>
+        </form>
+    </div>
+
+    <div class="audio-controls">
+        <button class="cute-button" onclick="document.getElementById('bg-music').play()">Play Music</button>
+        <button class="cute-button" onclick="document.getElementById('bg-music').pause()">Pause Music</button>
+        <audio id="bg-music" loop>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        document.addEventListener('click', function () {
+            const music = document.getElementById('bg-music');
+            if (music.paused) {
+                music.play().catch(() => {});
+            }
+        }, { once: true });
+    </script>
+</body>
+</html>
